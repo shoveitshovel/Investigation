@@ -1,12 +1,9 @@
 import math
 
-def difference(a,b,):
-    if a < b:
-        return b - a
-    else:
-        return a - b    
+def distance(a,b,c,d):
+    e = b - a  
 
-#def areParralel(xa,xb,xc,xd,ya,yb,yc,yd):
+def areParralel(xa,xb,xc,xd,ya,yb,yc,yd):
     if xb-xa == 0 and xd-xc == 0:
         if yc-ya == 0 and yd-yb == 0:
             return "both"
@@ -41,38 +38,20 @@ def difference(a,b,):
         return "none"
     
 def areSidesEqual(xa,xb,xc,xd,ya,yb,yc,yd):
-    side1x = difference(xa,xb)
-    side2x = difference(xb,xc)
-    side3x = difference(xc,xd)
-    side4x = difference(xd,xa)
-    side1y = difference(ya,yb)
-    side2y = difference(yb,yc)
-    side3y = difference(yc,yd)
-    side4y = difference(yd,ya)
-    if side1x == side2y and side1y == side2x:
-        side12equal = True
+    misc1 = ((xb-xa)**2)+((yb-ya))**2
+    misc2 = ((xc-xb)**2)+((yc-yb))**2
+    misc3 = ((xd-xc)**2)+((yd-yc))**2
+    misc4 = ((xa-xd)**2)+((ya-yd))**2
+    side1 = math.sqrt(misc1)
+    side2 = math.sqrt(misc2)
+    side3 = math.sqrt(misc3)
+    side4 = math.sqrt(misc4)
+    if side1 == side2 and side2 == side3 and side3 == side4:
+        return "all"
+    elif side1 == side2 and side3 == side4 or side2 == side3 and side4 == side1:
+        return "pair"
     else:
-        side12equal = False
-    if side2x == side3y and side2y == side3x:
-        side23equal = True
-    else:
-        side23equal = False
-    if side3x == side4y and side3y == side4x:
-        side34equal = True
-    else:
-        side34equal = False
-    if side4x == side1y and side4y == side1x:
-        side41equal = True
-    else:
-        side41equal = False
-    if side12equal == True and side23equal == True and side34equal == True and side41equal == True:
-        return "allsides"
-    elif side12equal == True and side34equal == True:
-        return "twopairs"
-    elif side23equal == True and side41equal == True:
-        return "twopairs"
-    else:
-        return "notequal"
+        return "none"
     
     
 
@@ -114,10 +93,10 @@ print(pointB)
 print(pointC)
 print(pointD)
 
-#isParralel = areParralel(x1,x2,x3,x4,y1,y2,y3,y4)
+isParralel = areParralel(x1,x2,x3,x4,y1,y2,y3,y4)
 isEqual = areSidesEqual(x1,x2,x3,x4,y1,y2,y3,y4)
 
-#print(isParralel)
+print(isParralel)
 
 print(x1,x2,x3,x4,y1,y2,y3,y4)
 print(isEqual)
