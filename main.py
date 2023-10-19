@@ -190,5 +190,8 @@ else:
         print("One diagonal bisects the angle they pass through")
         print("Both diagonals are inequal in length")
         print("This indicated that this quadrilateral is a kite.")
+    else:
+        print("There are no equal sides")
+        print("The quadrilateral can not be indentified")
 
 
