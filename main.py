@@ -122,25 +122,67 @@ while isLoopDone == False:
         pointD=pointD.split(",")
         isLoopDone = False
 
-
-
-
-
-
-
-
-
-
-
-
-
 isParralel = areParralel(x1,x2,x3,x4,y1,y2,y3,y4)
 isEqual = areSidesEqual(x1,x2,x3,x4,y1,y2,y3,y4)
 areAngles = rightAngles(x1,x2,x3,x4,y1,y2,y3,y4)
 
-print(isParralel)
 print(x1,x2,x3,x4,y1,y2,y3,y4)
+print(isParralel)
 print(areAngles)
 print(isEqual)
+
+if isParralel == "both":
+    print("Both pairs of sides are parralel")
+    if isEqual == "all":
+        print("All sides are equal")
+        if areAngles == "allright":
+            print("All angles are 90 degrees")
+            print("All diagonals are perpendicular")
+            print("Both diagonals bisect eachother")
+            print("Both diagonals bisect the angle they pass through")
+            print("Both diagonals are equal in length")
+            print("This indicated that this quadrilateral is a square.")
+        else:
+            print("Not all angles are 90 degrees")
+            print("All diagonals are perpendicular")
+            print("Both diagonals bisect eachother")
+            print("Both diagonals bisect the angle they pass through")
+            print("Both diagonals are inequal in length")
+            print("This indicated that this quadrilateral is a rhombus.")
+    else:
+        print("Not all sides are equal")
+        if areAngles == "allright":
+            print("All angles are 90 degrees")
+            print("All diagonals are not perpendicular")
+            print("Both diagonals bisect eachother")
+            print("Neither diagonals bisect the angle they pass through")
+            print("Both diagonals are equal in length")
+            print("This indicated that this quadrilateral is a rectangle.")
+        else:
+            print("Not all angles are 90 degrees")
+            print("All diagonals are not perpendicular")
+            print("Both diagonals bisect eachother")
+            print("Neither diagonals bisect the angle they pass through")
+            print("Both diagonals are inequal in length")
+            print("This indicated that this quadrilateral is a parralelogram.")
+elif isParralel == "half":
+    print("There is a pair of parralel sides")
+    print("There are no equal sides")
+    print("Not all angles are 90 degrees")
+    print("All diagonals are not perpendicular")
+    print("Niether diagonals bisect eachother")
+    print("Neither diagonals bisect the angle they pass through")
+    print("Both diagonals are inequal in length")
+    print("This indicated that this quadrilateral is a trapezium.")
+else:
+    print("There are no parralel sides")
+    if isEqual == "pair":
+        print("There is a pair of adjacent equal sides")
+        print("Not all angles are 90 degrees")
+        print("All diagonals are perpendicular")
+        print("One diagonal bisects the other")
+        print("One diagonal bisects the angle they pass through")
+        print("Both diagonals are inequal in length")
+        print("This indicated that this quadrilateral is a kite.")
 
 
