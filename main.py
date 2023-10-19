@@ -51,12 +51,18 @@ def areParralel(xa,xb,xc,xd,ya,yb,yc,yd):
     if xb-xa == 0 and xd-xc == 0:
         slope1 = 1
         slope2 = 1
+    elif xb-xa == 0 or xd-xc == 0:
+        slope1 = 1
+        slope2 = 0
     else:
         slope1 = (yb-ya)/(xb-xa)
         slope2 = (yd-yc)/(xd-xc)
     if xa-xd == 0 and xc-xb == 0:
         slope3 = 1
         slope4 = 1
+    elif xa-xd == 0 or xc-xb == 0:
+        slope3 = 1
+        slope4 = 0
     else:
         slope3 = (ya-yd)/(xa-xd)
         slope4 = (yc-yb)/(xc-xb)
@@ -70,56 +76,56 @@ def areParralel(xa,xb,xc,xd,ya,yb,yc,yd):
 
 isLoopDone = False
 print("Enter comma separated coordinates in anticlockwise order:")
-pointA = input("Vertex A: ")
-pointA=pointA.split(",")
+point1 = input("Vertex: ")
+point1=point1.split(",")
 while isLoopDone == False:
     try:
-        x1 = int(pointA[0])
-        y1 = int(pointA[1])
+        x1 = int(point1[0])
+        y1 = int(point1[1])
         isLoopDone = True
     except ValueError:
         print("Error: Values entered are not valid coordinates. Please enter again")
-        pointA = input("Vertex A: ")
-        pointA=pointA.split(",")
+        point1 = input("Vertex: ")
+        point1=point1.split(",")
         isLoopDone = False
 isLoopDone = False
-pointB = input("Vertex B: ")
-pointB=pointB.split(",")
+point2 = input("Vertex: ")
+point2=point2.split(",")
 while isLoopDone == False:
     try:
-        x2 = int(pointB[0])
-        y2 = int(pointB[1])
+        x2 = int(point2[0])
+        y2 = int(point2[1])
         isLoopDone = True
     except ValueError:
         print("Error: Values entered are not valid coordinates. Please enter again")
-        pointB = input("Vertex B: ")
-        pointB=pointB.split(",")
+        point2 = input("Vertex: ")
+        point2=point2.split(",")
         isLoopDone = False
 isLoopDone = False
-pointC = input("Vertex C: ")
-pointC=pointC.split(",")
+point3 = input("Vertex: ")
+point3=point3.split(",")
 while isLoopDone == False:
     try:
-        x3 = int(pointC[0])
-        y3 = int(pointC[1])
+        x3 = int(point3[0])
+        y3 = int(point3[1])
         isLoopDone = True
     except ValueError:
         print("Error: Values entered are not valid coordinates. Please enter again")
-        pointC = input("Vertex C: ")
-        pointC=pointC.split(",")
+        point3 = input("Vertex: ")
+        point3=point3.split(",")
         isLoopDone = False
 isLoopDone = False
-pointD = input("Vertex D: ")
-pointD=pointD.split(",")
+point4 = input("Vertex: ")
+point4=point4.split(",")
 while isLoopDone == False:
     try:
-        x4 = int(pointD[0])
-        y4 = int(pointD[1])
+        x4 = int(point4[0])
+        y4 = int(point4[1])
         isLoopDone = True
     except ValueError:
         print("Error: Values entered are not valid coordinates. Please enter again")
-        pointD = input("Vertex D: ")
-        pointD=pointD.split(",")
+        point4 = input("Vertex: ")
+        point4=point4.split(",")
         isLoopDone = False
 
 isParralel = areParralel(x1,x2,x3,x4,y1,y2,y3,y4)
